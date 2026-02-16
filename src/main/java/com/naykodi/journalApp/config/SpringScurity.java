@@ -22,6 +22,8 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 
             // protect journal and user endpoints
             .requestMatchers("/journal/**", "/users/**").authenticated()
+            // only admin can access admin endpoints
+            .requestMatchers("/admin/**").hasRole("ADMIN")
 
             // everything else is public
             .anyRequest().permitAll()

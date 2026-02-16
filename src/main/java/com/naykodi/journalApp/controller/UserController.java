@@ -33,15 +33,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
- 
-
-    // @PostMapping
-    // public UserEntity createUserWithRole(@RequestBody UserEntity user) {
-    //     user.setPassword(passwordEncoder.encode(user.getPassword()));
-    //     user.setRoles(List.of("USER"));
-    //     userService.saveEntry(user);
-    //     return user;
-    // }
 
     @PutMapping()
     public ResponseEntity<UserEntity> updateUser( @RequestBody UserEntity user) {
