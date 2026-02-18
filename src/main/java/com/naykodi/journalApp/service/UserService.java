@@ -1,5 +1,7 @@
 package com.naykodi.journalApp.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,8 @@ public class UserService {
 
      @Autowired
     private PasswordEncoder passwordEncoder;
+
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     public void saveEntry(UserEntity user) {
         userRepositry.save(user);
